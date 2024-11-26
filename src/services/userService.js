@@ -13,7 +13,8 @@ class UserService {
   constructor(userRepository) {
     this.userRepository = userRepository;
 
-    if (!process.env.JWT_SECRET) throw new Error("JWT_SECRET is not defined");
+    //Comment out because it should run without creation of README File, if it would not be a demo application this would not be done.
+    //if (!process.env.JWT_SECRET) throw new Error("JWT_SECRET is not defined");
   }
 
   async authenticateUser(name, password) {
@@ -49,7 +50,7 @@ class UserService {
     // Generate a JWT token
     const token = jwt.sign(
       { id: user.id, name: user.name },
-      process.env.JWT_SECRET,
+      process.env.JWT_SECRET || "3f9c3e4b5a71cff8b241d49590c909f3c91ec3c460c9a9c9ebcdef51ba3d241e",
       { expiresIn: process.env.JWT_EXPIRES_TIME_HOURS || 24 }
     );
 
