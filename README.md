@@ -67,23 +67,23 @@ Insert this token into the "Authorize" input in the Swagger UI.
 
 The project follows a modular structure for scalability and maintainability:
 
-/src
+    /src
   
-  /src/controllers     # Request handling and response logic
+      /controllers     # Request handling and response logic
 
-  /src/dataaccess      # Creation of the database
+      /dataaccess      # Creation of the database
 
-  /src/middlewares     # Middleware for authentication, validation, etc.
+      /middlewares     # Middleware for authentication, validation, etc.
 
-  /src/models          # Data models and sanitization logic
+      /models          # Data models and sanitization logic
 
-  /src/repositories    # Database interaction logic
+      /repositories    # Database interaction logic
 
-  /src/routes          # API route definitions
+      /routes          # API route definitions
 
-  /src/services        # Business logic and service abstraction
+      /services        # Business logic and service abstraction
 
-  /src/utils           # Utility functions (e.g., token generation)
+      /utils           # Utility functions (e.g., token generation)
 
 swagger.json       # Swagger documentation
 
