@@ -1,8 +1,5 @@
 This project is a Node.js-based backend application with user authentication, rate limiting, and Swagger API documentation. It provides a solid foundation for applications, with features such as JWT-based authentication and centralized error handling.
 
-Getting Started
-Prerequisites
-
 Before you begin, ensure you have the following installed:
 
     Node.js: Download and install Node.js
@@ -71,18 +68,29 @@ Insert this token into the "Authorize" input in the Swagger UI.
 The project follows a modular structure for scalability and maintainability:
 
 /src
-  /controllers     # Request handling and response logic
-  /dataaccess      # Creation of the database
-  /middlewares     # Middleware for authentication, validation, etc.
-  /models          # Data models and sanitization logic
-  /repositories    # Database interaction logic
-  /routes          # API route definitions
-  /services        # Business logic and service abstraction
-  /utils           # Utility functions (e.g., token generation)
+  
+  /src/controllers     # Request handling and response logic
+
+  /src/dataaccess      # Creation of the database
+
+  /src/middlewares     # Middleware for authentication, validation, etc.
+
+  /src/models          # Data models and sanitization logic
+
+  /src/repositories    # Database interaction logic
+
+  /src/routes          # API route definitions
+
+  /src/services        # Business logic and service abstraction
+
+  /src/utils           # Utility functions (e.g., token generation)
+
 swagger.json       # Swagger documentation
+
 generateJWTToken.js # Utility to create JWT tokens for testing
 
 Features
+
 ✅ Authentication
     Secure JWT-based authentication.
     Rate and login attempts limiting to prevent brute-force attacks.
