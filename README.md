@@ -65,6 +65,7 @@ Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwi
 Insert this token into the "Authorize" input in the Swagger UI.
 
 
+
 The project follows a modular structure for scalability and maintainability:
 
     /src
@@ -85,9 +86,11 @@ The project follows a modular structure for scalability and maintainability:
 
       /utils           # Utility functions (e.g., token generation)
 
-swagger.json       # Swagger documentation
+    swagger.json       # Swagger documentation
+    
+    generateJWTToken.js # Utility to create JWT tokens for testing
 
-generateJWTToken.js # Utility to create JWT tokens for testing
+
 
 Features
 
@@ -104,16 +107,18 @@ Features
 ✅ Extensible Design
     Modular architecture for ease of maintenance and scalability.
 
+
+
 What alternatives to JWT are there?
-
-Session-based Authentication:
-    Traditional server-side sessions involve storing user authentication data on the server, typically in a database or in-memory storage.
-
-Windows Authentication: 
-    Integrates directly with Active Directory, making it ideal for corporate networks where users already have domain accounts.
-
-OAuth 2.0:
-    OAuth 2.0 is a robust protocol often used for delegated access like Google Accounts.
+    
+    Session-based Authentication:
+        Traditional server-side sessions involve storing user authentication data on the server, typically in a database or in-memory storage.
+    
+    Windows Authentication: 
+        Integrates directly with Active Directory, making it ideal for corporate networks where users already have domain accounts.
+    
+    OAuth 2.0:
+        OAuth 2.0 is a robust protocol often used for delegated access like Google Accounts.
 
 What are the best features of JWT?
     The Stateless Authentication with Self-contained Tokens gives it high flexibility and ease of use.
