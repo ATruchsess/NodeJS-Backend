@@ -37,6 +37,13 @@ router.post(
   (req, res) => userController.login(req, res)
 );
 
+router.post(
+  "/logout",
+  // #swagger.tags = ['Users']
+  // #swagger.summary = 'Logs the user out by clearing the jwt HttpOnly cookie from the browser.'
+  (req, res) => userController.logout(req, res)
+);
+
 router.get(
   "/",
   authorization,
@@ -75,31 +82,6 @@ router.post(
   } */
   validateUser,
   (req, res) => userController.createUser(req, res)
-);
-
-router.put(
-  "/:id",
-  authorization,
-  // #swagger.tags = ['Users']
-  // #swagger.summary = 'This endpoint can be used to update a existing user.'
-  /* #swagger.parameters['body'] = {
-      in: 'body',
-      schema: {
-            id: '',
-            name: 'John Doe',
-            password: '12345678',
-        }
-  } */
-  validateUser,
-  (req, res) => userController.updateUser(req, res)
-);
-
-router.delete(
-  "/:id",
-  authorization,
-  // #swagger.tags = ['Users']
-  // #swagger.summary = 'This endpoint can be used to delete a existing user.'
-  (req, res) => userController.deleteUser(req, res)
 );
 
 module.exports = router;

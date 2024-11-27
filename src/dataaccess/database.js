@@ -1,7 +1,7 @@
 /* Alexander von Truchseß 26.11.2024
- Creates a new SQLite database in memory for demo purposes.
+ Creates a new SQLite database in memory for demo purposes. 
  This in-memory database provides a simple and clean solution for running tests,
- ensuring that no persistent data is stored.
+ ensuring that no persistent data is stored after a newstart.
  In a real environment, this Data Access Layer should be replaced 
  with a more robust database system, such as MongoDB or SQL Server.
 */
