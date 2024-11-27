@@ -44,6 +44,20 @@
         }
       }
     },
+    "/api/v1/users/logout": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Logs the user out by clearing the jwt HttpOnly cookie from the browser.",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
     "/api/v1/users/": {
       "get": {
         "tags": [
@@ -137,83 +151,6 @@
           "Users"
         ],
         "summary": "This endpoint returns a user by id.",
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "Bad Request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Users"
-        ],
-        "summary": "This endpoint can be used to update a existing user.",
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "example": ""
-                },
-                "name": {
-                  "type": "string",
-                  "example": "John Doe"
-                },
-                "password": {
-                  "type": "string",
-                  "example": "12345678"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "Bad Request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Users"
-        ],
-        "summary": "This endpoint can be used to delete a existing user.",
         "description": "",
         "parameters": [
           {

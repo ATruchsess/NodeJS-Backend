@@ -29,15 +29,22 @@ class UserController {
         maxAge: 3600000 * 24, // 24 hours
       });
 
-      res
-        .status(200)
-        .json({
-          message: "Login successful",
-          user: { id: user.id, name: user.name },
-        });
+      res.status(200).json({
+        message: "Login successful",
+        user: { id: user.id, name: user.name },
+      });
     } catch (err) {
       res.status(401).json({ message: err.message });
     }
+  }
+
+  async logout(req, res) {
+    res.clearCookie("jwt", {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production", // Use secure cookies in production, Ensure this matches your cookie's configuration
+      sameSite: "strict",
+    });
+    res.status(200).send({ message: "Logged out successfully" });
   }
 
   async getUsers(req, res) {
