@@ -103,3 +103,17 @@ Features
 
 ✅ Extensible Design
     Modular architecture for ease of maintenance and scalability.
+
+What alternatives to JWT are there?
+
+Session-based Authentication:
+    Traditional server-side sessions involve storing user authentication data on the server, typically in a database or in-memory storage.
+
+Windows Authentication: 
+    Integrates directly with Active Directory, making it ideal for corporate networks where users already have domain accounts.
+
+OAuth 2.0:
+    OAuth 2.0 is a robust protocol often used for delegated access like Google Accounts.
+
+What are the best features of JWT?
+    The Stateless Authentication with Self-contained Tokens gives it high flexibility and ease of use.
