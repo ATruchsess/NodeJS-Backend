@@ -40,6 +40,38 @@ class UserController {
     }
   }
 
+  async login(req, res) {
+    try {
+      const { name, password } = req.body;
+
+      if (!name || !password) {
+        return res
+          .status(400)
+          .json({ message: "Username and password are required" });
+      }
+
+      const { token, user } = await this.userService.authenticateUser(
+        name,
+        password
+      );
+
+      // Set the token as an HTTP-only cookie
+      res.cookie("jwt", token, {
+        httpOnly: true,
+        sameSite: "strict",
+        secure: process.env.NODE_ENV === "production", // Use secure cookies in production
+        maxAge: 3600000 * 24, // 24 hours
+      });
+
+      res.status(200).json({
+        message: "Login successful",
+        user: { id: user.id, name: user.name },
+      });
+    } catch (err) {
+      res.status(401).json({ message: err.message });
+    }
+  }
+
   async getUsers(req, res) {
     try {
       const users = await this.userService.getUsers();

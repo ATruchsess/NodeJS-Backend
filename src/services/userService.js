@@ -78,17 +78,18 @@ class UserService {
     return new User(await this.userRepository.create(newUser)).sanitize();
   }
 
-  async updateUser(id, user) {
-    const hashedPassword = await this.hashPassword(user.password, user.name);
-    const updatedUser = { ...user, password: hashedPassword };
-    return new User(await this.userRepository.update(id, user)).sanitize();
-  }
+  /* Alexander von Truchseß 27.11.2024 Removed update and delete function because every user could this, which makes not that much seens to have the permission to delete other users
+    async updateUser(id, user) {
+      const hashedPassword = await this.hashPassword(user.password, user.name);
+      const updatedUser = { ...user, password: hashedPassword };
+      return new User(await this.userRepository.update(id, user)).sanitize();
+    }
 
-  //Could add a isActive flag, to enable soft-delete but databases solutions like SQL Temporal Table could also be used
-  async deleteUser(id) {
-    return await this.userRepository.delete(id);
-  }
-
+    //Could add a isActive flag, to enable soft-delete but databases solutions like SQL Temporal Table could also be used
+    async deleteUser(id) {
+      return await this.userRepository.delete(id);
+    }
+  */
   async hashPassword(password, name) {
     const salt = name + process.env.PASSWORT_SALT; //Some random information for the salt would also be good, but PASSWORT_SALT + name should be strong
     const hash = await crypto

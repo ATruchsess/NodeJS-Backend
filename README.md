@@ -1,8 +1,5 @@
 This project is a Node.js-based backend application with user authentication, rate limiting, and Swagger API documentation. It provides a solid foundation for applications, with features such as JWT-based authentication and centralized error handling.
 
-Getting Started
-Prerequisites
-
 Before you begin, ensure you have the following installed:
 
     Node.js: Download and install Node.js
@@ -70,19 +67,30 @@ Insert this token into the "Authorize" input in the Swagger UI.
 
 The project follows a modular structure for scalability and maintainability:
 
-/src
-  /controllers     # Request handling and response logic
-  /dataaccess      # Creation of the database
-  /middlewares     # Middleware for authentication, validation, etc.
-  /models          # Data models and sanitization logic
-  /repositories    # Database interaction logic
-  /routes          # API route definitions
-  /services        # Business logic and service abstraction
-  /utils           # Utility functions (e.g., token generation)
+    /src
+  
+      /controllers     # Request handling and response logic
+
+      /dataaccess      # Creation of the database
+
+      /middlewares     # Middleware for authentication, validation, etc.
+
+      /models          # Data models and sanitization logic
+
+      /repositories    # Database interaction logic
+
+      /routes          # API route definitions
+
+      /services        # Business logic and service abstraction
+
+      /utils           # Utility functions (e.g., token generation)
+
 swagger.json       # Swagger documentation
+
 generateJWTToken.js # Utility to create JWT tokens for testing
 
 Features
+
 ✅ Authentication
     Secure JWT-based authentication.
     Rate and login attempts limiting to prevent brute-force attacks.
@@ -95,3 +103,18 @@ Features
 
 ✅ Extensible Design
     Modular architecture for ease of maintenance and scalability.
+    
+
+What alternatives to JWT are there?
+
+Session-based Authentication:
+    Traditional server-side sessions involve storing user authentication data on the server, typically in a database or in-memory storage.
+
+Windows Authentication: 
+    Integrates directly with Active Directory, making it ideal for corporate networks where users already have domain accounts.
+
+OAuth 2.0:
+    OAuth 2.0 is a robust protocol often used for delegated access like Google Accounts.
+
+What are the best features of JWT?
+    The Stateless Authentication with Self-contained Tokens gives it high flexibility and ease of use.
