@@ -70,7 +70,6 @@ router.get(
 
 router.post(
   "/",
-  authorization,
   // #swagger.tags = ['Users']
   // #swagger.summary = 'This endpoint can be used to create a new user.'
   /* #swagger.parameters['body'] = {
