@@ -118,4 +118,3 @@ OAuth 2.0:
 
 What are the best features of JWT?
     The Stateless Authentication with Self-contained Tokens gives it high flexibility and ease of use.
-=======
