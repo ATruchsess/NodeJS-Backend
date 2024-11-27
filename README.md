@@ -4,6 +4,7 @@ Before you begin, ensure you have the following installed:
 
     Node.js: Download and install Node.js
     npm (comes with Node.js)
+    Visual Studio Code (optional)
 
 Setup and Installation
 1. Install Dependencies
