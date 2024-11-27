@@ -19,7 +19,12 @@ const routes = require('./src/routes'); // Centralized routing
 
 // Middleware to parse JSON
 app.use(express.json());
-app.use(cors()); // Enable Cross-Origin Resource Sharing
+app.use(cors(
+  {
+    origin: process.env.FRONTEND_ORIGIN, // Frontend URL
+    credentials: true, // Allow credentials
+  }
+)); // Enable Cross-Origin Resource Sharing
 app.use(helmet()); // Secure HTTP headers
 if (process.env.USE_HTTPS){
   app.use(helmet.hsts());
