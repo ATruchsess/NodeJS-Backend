@@ -49,7 +49,7 @@ To execute the test suite:
 npm run test
 ```
 
-Authentication with Swagger 
+Authentication Token creation for Swagger API
 
 The Swagger API requires a valid JWT token or Cookie to access protected endpoints. You can generate a token using the provided generateJWTToken.js utility.
 Or Test the application with the Vue Frontend, which is more comfortable.
